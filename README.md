@@ -1,4 +1,4 @@
-![symptomapp](https://i.imgur.com/h2eOzIN.gif)
+
 
 # Getting Started with Create React App
 
