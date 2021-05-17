@@ -27,8 +27,8 @@ router.get('/test', (req, res, next) => {
 
 router.get('/getEvents', (req, res, next) => {
   axios.get("https://datos.madrid.es/egob/catalogo/300107-0-agenda-actividades-eventos.json")
-  .then(r = res.send(r))
-  .catch(e = res.send(e))
+  .then((r) => {res.send(r.data)})
+  .catch((e) => {res.send(e)})
 });
 
 router.get('/users/me/:id', (req, res, next) => {
