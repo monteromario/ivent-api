@@ -6,6 +6,8 @@ const User = require('../models/User.model');
 const createError = require('http-errors')
 const jwt = require('jsonwebtoken')
 
+const axios = require('axios').default;
+
 const rand = function() {
     return Math.random().toString(36).substr(2);
 };
@@ -17,6 +19,16 @@ const token = function() {
 
 router.get('/', (req, res, next) => {
   res.send('index');
+});
+
+router.get('/test', (req, res, next) => {
+  res.send('this is a test');
+});
+
+router.get('/getEvents', (req, res, next) => {
+  axios.get("https://datos.madrid.es/egob/catalogo/300107-0-agenda-actividades-eventos.json")
+  .then(r = res.send(r))
+  .catch(e = res.send(e))
 });
 
 router.get('/users/me/:id', (req, res, next) => {
