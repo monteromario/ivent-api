@@ -23,7 +23,7 @@ router.get('/getEvents', (req, res, next) => {
   .catch((e) => {res.send(e)})
 });
 
-router.get('/getEvent', (req, res, next) => {
+router.get('/getEvent/:id', (req, res, next) => {
   axios.get("https://datos.madrid.es/egob/catalogo/tipo/evento/"+req.params.id+".json")
   .then((r) => {res.send(r.data)})
   .catch((e) => {res.send(e)})
